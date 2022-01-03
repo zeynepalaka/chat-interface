@@ -1,0 +1,181 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css";
+
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    text-decoration: none;
+    list-style: none;
+    /*linklerdeki mavi yazıyı yok eder.*/
+}
+
+*:focus {
+    outline: 0;
+    /*inputta tıklandığında kenarlık belirriyordu bu kod sayesinde artık gözükmüyor*/
+}
+
+html,
+body {
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.chat {
+    height: 100%;
+    display: flex;
+    /*yan yana getirir.*/
+
+}
+
+.chat .sidebar {
+    width: 300px;
+    min-width: 300px;
+    /*esnek olduğu için ekran küçüldüğünde otomatik olarak küçüleceğinden ben min-widht değeri vererek bu küçülmeyiş durdurabiliyorum çünkü tasarımım buna müsait bu sayede sadece sabit kalıp sadece content alanını küçültüyor.*/
+    background: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat .sidebar .search {
+    height: 50px;
+    border-bottom: 1px solid #dddd;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    /*search ikonunusadece bu alanın içerisinde sağa yaslamak istediğimiz için burada position relative kullanıyoruz ve ikon bölümünde ise absolute kullanarak çözüyoruz.*/
+}
+
+.chat .sidebar .search input {
+    width: 100%;
+    background: rgb(255, 255, 255);
+    height: 30px;
+    border-radius: 30px;
+    font-size: 14px;
+    padding: 0 35px 0 15px;
+}
+
+.chat .sidebar .search i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #999;
+}
+
+.chat .sidebar .contacts {
+    overflow: auto;
+    /*bu kısım scrool olmasını sağlıyor*/
+    flex: 1;
+}
+
+.chat .sidebar .contacts ul li a {
+    display: flex;
+    /*yan yana gelirler*/
+    height: 60px;
+    align-items: center;
+}
+
+.chat .sidebar .contacts ul li.active a,
+.chat .sidebar .contacts ul li a:hover {
+    background: #fff;
+}
+
+.chat .sidebar .contacts ul li a img {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    padding: 0 10px;
+}
+
+.chat .sidebar .contacts ul li a .contact .name {
+    font-size: 15px;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 3px;
+}
+
+.chat .sidebar .contacts ul li a .contact .message {
+    font-size: 13px;
+    color: #999;
+
+}
+
+.chat .sidebar .contacts ul li a .notification {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: chocolate;
+    font-size: 11px;
+    color: #fff;
+    text-align: center;
+    line-height: 17px;
+    margin-left: auto;
+    /*flex kullandığımızda işe yarıyor kalan boşluk otomatik olarak hesaplanıyor.*/
+}
+
+.chat .content {
+    flex: 1;
+    /*sidebarda kalan tarafın tamamını kapsaması için flex:1 verdim*/
+    border-left: 1px solid #ddd;
+}
+
+.chat .content .message-header {
+    height: 50px;
+    min-height: 50px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    /*iki ana divin biri sağa biri sola yaslanır*/
+    align-items: center;
+    padding: 0 15px;
+}
+
+.chat .content .message-header .user-info {
+    display: flex;
+    /*bu sayede yan yana geldi*/
+    align-items: center;
+}
+
+.chat .content .message-header .user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+
+}
+
+.chat .content .message-header .user-info .user .name {
+    font-size: 15px;
+    font-weight: 500;
+    color: #222;
+}
+
+.chat .content .message-header .user-info .user .time {
+    font-size: 13px;
+    color: #999;
+}
+
+.chat .content .message-header .actions ul {
+    display: flex;
+    /*yan yana getirmek istediğimiz için bunu kullanıyoruz.*/
+
+
+}
+
+.chat .content .message-header .actions ul li {
+    margin-left: 10px;
+}
+
+.chat .content .message-header .actions ul li a {
+    font-size: 17px;
+    color: #999;
+}
+
+.chat .content .message-header .actions ul li a:hover {
+    color: #222;
+}
